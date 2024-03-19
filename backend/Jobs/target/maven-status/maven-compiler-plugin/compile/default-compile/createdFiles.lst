@@ -1,0 +1,11 @@
+com\jobsportal\Jobs\controller\JobsController.class
+com\jobsportal\Jobs\entity\User.class
+com\jobsportal\Jobs\controller\UserController.class
+com\jobsportal\Jobs\entity\AuthRequest.class
+com\jobsportal\Jobs\service\impl\JwtService.class
+com\jobsportal\Jobs\filter\JwtAuthFilter.class
+com\jobsportal\Jobs\service\impl\UserInfoDetails.class
+com\jobsportal\Jobs\JobsApplication.class
+com\jobsportal\Jobs\configurations\SecurityConfig.class
+com\jobsportal\Jobs\service\impl\UserService.class
+com\jobsportal\Jobs\respository\UserRepository.class
