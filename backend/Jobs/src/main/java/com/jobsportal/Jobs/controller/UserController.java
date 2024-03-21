@@ -2,6 +2,7 @@ package com.jobsportal.Jobs.controller;
 
 import com.jobsportal.Jobs.entity.AuthRequest;
 import com.jobsportal.Jobs.entity.User;
+import com.jobsportal.Jobs.service.impl.JwtService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -19,7 +20,7 @@ public class UserController {
 	private com.jobsportal.Jobs.service.impl.UserService service;
 
 	@Autowired
-	private com.jobsportal.Jobs.service.impl.JwtService jwtService;
+	private JwtService jwtService;
 
 	@Autowired
 	private AuthenticationManager authenticationManager;
@@ -51,7 +52,7 @@ public class UserController {
 		Authentication authentication = authenticationManager.authenticate(
 				new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
 		if (authentication.isAuthenticated()) {
-			return jwtService.generateToken(authRequest.getUsername());			
+			return jwtService.generateToken(authRequest.getUsername());
 		} else {
 			throw new UsernameNotFoundException("invalid user request !");
 		}
