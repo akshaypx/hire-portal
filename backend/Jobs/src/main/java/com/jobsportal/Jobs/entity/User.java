@@ -1,20 +1,23 @@
 package com.jobsportal.Jobs.entity;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity
+//@Entity
+@Document(collection = "user")
 public class User {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	private String name;
-	private String email;
-	private String password;
-	private String role;
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+		private Long id;
+		private String name;
+		private String email;
+		private String password;
+		private String role;
 
 	public Long getId() {
 		return id;
