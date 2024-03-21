@@ -31,8 +31,8 @@
 	
 		private String createToken(Map<String, Object> claims, String userName) {
 			return Jwts.builder().setClaims(claims).setSubject(userName).setIssuedAt(new Date(System.currentTimeMillis()))
-	//				.setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 30))
-					.setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY))
+					.setExpiration(new Date(System.currentTimeMillis() +  1800000))
+//					.setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY))
 					.signWith(getSignKey(), SignatureAlgorithm.HS256).compact();
 		}
 	
